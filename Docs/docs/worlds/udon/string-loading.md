@@ -23,6 +23,16 @@ The following URLs are available:
 * Pastebin (`pastebin.com`)
 * Github Gist (`gist.githubusercontent.com`)
 
+The URLs cannot be changed on run-time without explicit user input.
+
+# String Integrity
+
+Since this method function downloads the string from the internet, it is important to be aware of the fact that a user might not download the exact string you specify. They might not have access to the webpage, they might be behind a webproxy that can edit the string, or even themselves override the downloaded string if they are tech savvy enough.
+
+This means that it is your job to ensure that the downloaded string is valid and not manipulated. For example, if you have created a `pastebin.com` page with a list of usernames that you want to have access to an admin control panel in your world, you need to ensure that users that join the world don't give themselves access to that admin panel by overwriting the downloaded string.
+
+The two easiest ways to ensure the integrity of the downloaded string is to either encrypt it or use a [message authentication code](https://en.wikipedia.org/wiki/Message_authentication_code).
+
 # Guides
 ## Using the `DownloadString` script to download a string
 The SDK includes a script to download strings easily:
